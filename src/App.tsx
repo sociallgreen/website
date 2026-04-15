@@ -32,6 +32,8 @@ type TeamMember = {
   asset: string;
 };
 
+const asset = (fileName: string) => `${import.meta.env.BASE_URL}assets/${fileName}`;
+
 const metrics: Metric[] = [
   { value: '01', label: 'find a bin and recycle socially' },
   { value: '02', label: 'track glass, plastic, and aluminum actions' },
@@ -42,55 +44,55 @@ const slides: Slide[] = [
   {
     title: 'Sociallgreen mobile',
     body: 'Did you know that recycling got social? Store your recycling points, track your performance, and win eco-friendly rewards.',
-    asset: '/assets/nexus-1.jpg',
+    asset: asset('nexus-1.jpg'),
   },
   {
     title: 'Welcome',
     body: 'Start recycle while playing. Use the app to find a bin, observe the green leaderboard, and share your green action.',
-    asset: '/assets/nexus-2.jpg',
+    asset: asset('nexus-2.jpg'),
   },
   {
     title: 'Locate a bin',
     body: 'Single tap on the map. Find your nearest bin, collect your waste, and go recycle socially.',
-    asset: '/assets/nexus-3.jpg',
+    asset: asset('nexus-3.jpg'),
   },
   {
     title: 'Scan the QR',
     body: 'Found the bin? Recycle and use the app to scan the QR code. The app stores your points in your profile.',
-    asset: '/assets/nexus-4.jpg',
+    asset: asset('nexus-4.jpg'),
   },
   {
     title: 'Win badges',
     body: 'Combine your recyclable waste and win badges. Who is the greatest recycler of all? Time will tell.',
-    asset: '/assets/nexus-5.jpg',
+    asset: asset('nexus-5.jpg'),
   },
 ];
 
 const promos: PromoPanel[] = [
   {
-    background: '/assets/bg1.jpg',
-    logo: '/assets/ennovation.png',
+    background: asset('bg1.jpg'),
+    logo: asset('ennovation.png'),
     alt: 'Ennovation',
     title: 'Sociallgreen gets the 1st place',
     body: 'Small parallax breaks bring back the original pacing without overwhelming the page.',
   },
   {
-    background: '/assets/bg2.jpg',
-    logo: '/assets/ihu.png',
+    background: asset('bg2.jpg'),
+    logo: asset('ihu.png'),
     alt: 'International Hellenic University',
     title: 'First node of a network',
     body: 'The bin network story started with a real place people could interact with.',
   },
   {
-    background: '/assets/bg4.jpg',
-    logo: '/assets/microsoft.png',
+    background: asset('bg4.jpg'),
+    logo: asset('microsoft.png'),
     alt: 'Microsoft',
     title: 'Our early stage partners',
     body: 'The legacy page used partner panels as proof points. They still help frame the story.',
   },
   {
-    background: '/assets/bg5.jpg',
-    logo: '/assets/coho.png',
+    background: asset('bg5.jpg'),
+    logo: asset('coho.png'),
     alt: 'Coho',
     title: 'Our coworking home',
     body: 'The lab section below stays tied to the original workspace and contact identity.',
@@ -100,7 +102,7 @@ const promos: PromoPanel[] = [
 const binModels: BinModel[] = [
   {
     name: 'Compact',
-    asset: '/assets/big-bin.png',
+    asset: asset('big-bin.png'),
     blurb: 'High-visibility installation for campuses, entrances, and public pilots.',
     specs: [
       { label: 'Dimensions', value: '135*40*65 cm' },
@@ -116,7 +118,7 @@ const binModels: BinModel[] = [
   },
   {
     name: 'Wooden',
-    asset: '/assets/aspros-kados.png',
+    asset: asset('aspros-kados.png'),
     blurb: 'Flexible indoor unit for office floors and shared lounge environments.',
     specs: [
       { label: 'Dimensions', value: 'Customizable' },
@@ -133,17 +135,17 @@ const binModels: BinModel[] = [
 ];
 
 const team: TeamMember[] = [
-  { name: 'Dimitrios Ntempos', role: 'Team Manager', asset: '/assets/ntempos.jpg' },
-  { name: 'Evangelos Almpanidis', role: 'Electronic Engineer', asset: '/assets/vaggel.jpg' },
-  { name: 'Georgios Kalaitzoglou', role: 'Software Engineer', asset: '/assets/sliver.jpg' },
-  { name: 'Adre', role: 'Team Member', asset: '/assets/adre.jpg' },
-  { name: 'Antw', role: 'Team Member', asset: '/assets/antw.jpg' },
-  { name: 'Esu', role: 'Team Member', asset: '/assets/esu.jpg' },
-  { name: 'Eva', role: 'Team Member', asset: '/assets/eva.jpg' },
-  { name: 'Giwrgos', role: 'Team Member', asset: '/assets/giwrgos.jpg' },
-  { name: 'Krinis', role: 'Team Member', asset: '/assets/krinis.jpg' },
-  { name: 'Natasa', role: 'Team Member', asset: '/assets/natasa.jpg' },
-  { name: 'Vivi', role: 'Team Member', asset: '/assets/vivi.jpg' },
+  { name: 'Dimitrios Ntempos', role: 'Team Manager', asset: asset('ntempos.jpg') },
+  { name: 'Evangelos Almpanidis', role: 'Electronic Engineer', asset: asset('vaggel.jpg') },
+  { name: 'Georgios Kalaitzoglou', role: 'Software Engineer', asset: asset('sliver.jpg') },
+  { name: 'Adre', role: 'Team Member', asset: asset('adre.jpg') },
+  { name: 'Antw', role: 'Team Member', asset: asset('antw.jpg') },
+  { name: 'Esu', role: 'Team Member', asset: asset('esu.jpg') },
+  { name: 'Eva', role: 'Team Member', asset: asset('eva.jpg') },
+  { name: 'Giwrgos', role: 'Team Member', asset: asset('giwrgos.jpg') },
+  { name: 'Krinis', role: 'Team Member', asset: asset('krinis.jpg') },
+  { name: 'Natasa', role: 'Team Member', asset: asset('natasa.jpg') },
+  { name: 'Vivi', role: 'Team Member', asset: asset('vivi.jpg') },
 ];
 
 function PromoDivider({ background, logo, alt, title, body }: PromoPanel) {
@@ -176,7 +178,7 @@ function App() {
     <div className="shell">
       <header className="topbar">
         <a className="brand" href="#hero" aria-label="Sociallgreen home">
-          <img src="/assets/logo.png" alt="Sociallgreen" />
+          <img src={asset('logo.png')} alt="Sociallgreen" />
           <span>Sociallgreen</span>
         </a>
         <nav className="nav">
@@ -223,8 +225,8 @@ function App() {
             <div className="visual-panel visual-stack">
               <div className="pulse pulse-a" />
               <div className="pulse pulse-b" />
-              <img className="bin-left" src="/assets/aspra-twins.png" alt="Sociallgreen white bins" />
-              <img className="bin-right" src="/assets/black-twins.png" alt="Sociallgreen black bins" />
+              <img className="bin-left" src={asset('aspra-twins.png')} alt="Sociallgreen white bins" />
+              <img className="bin-right" src={asset('black-twins.png')} alt="Sociallgreen black bins" />
             </div>
             <div className="visual-panel visual-note">
               <p>Legacy message</p>
@@ -244,7 +246,7 @@ function App() {
             </p>
           </div>
           <div className="flow-card">
-            <img src="/assets/how-it-works.png" alt="How Sociallgreen works flow" />
+            <img src={asset('how-it-works.png')} alt="How Sociallgreen works flow" />
           </div>
         </section>
 
@@ -259,10 +261,10 @@ function App() {
             </p>
             <div className="app-store-row">
               <a href="https://itunes.apple.com/gb/app/sociallgreen/id848272761">
-                <img src="/assets/app-store.png" alt="Download on the App Store" />
+                <img src={asset('app-store.png')} alt="Download on the App Store" />
               </a>
               <a href="https://play.google.com/store/apps/details?id=com.sociallgreenpr">
-                <img src="/assets/google-play.png" alt="Get it on Google Play" />
+                <img src={asset('google-play.png')} alt="Get it on Google Play" />
               </a>
             </div>
           </div>
@@ -357,7 +359,7 @@ function App() {
               The two original hardware formats are preserved here, and the characteristic sheet appears with a hover animation inspired by the old site mask effect.
             </p>
             <div className="warehouse-card">
-              <img src="/assets/warehouse.png" alt="Warehouse" />
+              <img src={asset('warehouse.png')} alt="Warehouse" />
               <div>
                 <strong>Available at warehouse</strong>
                 <span>6 installations</span>
@@ -430,7 +432,7 @@ function App() {
           </div>
           <div className="lab-card">
             <h3>Sociallgreen Lab at CoHo</h3>
-            <img src="/assets/lab.jpg" alt="Sociallgreen lab" />
+            <img src={asset('lab.jpg')} alt="Sociallgreen lab" />
           </div>
         </section>
       </main>
