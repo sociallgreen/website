@@ -187,7 +187,7 @@ function App() {
   return (
     <div className="shell">
       <header className="topbar">
-        <a className="brand" href="#hero" aria-label="Sociallgreen home">
+        <a className="brand" href="#hero" onClick={() => setIsMenuOpen(false)} aria-label="Sociallgreen home">
           <img src={asset('logo.png')} alt="Sociallgreen" />
         </a>
         <button
@@ -243,7 +243,7 @@ function App() {
 
           <div className="hero-visual">
             <div className="visual-panel visual-stack">
-              <div className="hero-status">Mothballed</div>
+              <div className="hero-status">Mothballed!</div>
               <div className="hero-bins">
                 <img className="bin-left" src={asset('black-twins.png')} alt="Sociallgreen white bins" />
                 <img className="bin-right" src={asset('aspra-twins.png')} alt="Sociallgreen black bins" />

@@ -200,6 +200,7 @@ main {
   background: var(--surface);
   box-shadow: var(--shadow);
   overflow: hidden;
+  scroll-margin-top: 90px;
 }
 
 .hero {
@@ -1165,7 +1166,7 @@ main {
   display: grid;
   gap: 14px;
   padding: 56px 20px 22px;
-  height: 100%;
+  min-height: 100%;
   align-content: start;
   background: rgba(12, 22, 16, 0.92);
   color: #fff7ee;
@@ -1212,6 +1213,8 @@ main {
 .spec-list {
   display: grid;
   gap: 8px;
+  max-height: calc(100% - 78px);
+  overflow-y: auto;
 }
 
 .spec-row {
@@ -1226,12 +1229,14 @@ main {
 
 .spec-row strong,
 .spec-row span {
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .spec-row span {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: clip;
+}
 }
 
 .team-grid--expanded {
