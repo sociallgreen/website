@@ -411,20 +411,46 @@ main {
 
 .hero-status {
   position: absolute;
-  top: 0px;
+  top: 8px;
   left: 50%;
   z-index: 3;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
   transform: translateX(-50%);
-  padding: 8px 14px;
+  min-width: clamp(220px, 4vw, 360px);
+  min-height: 78px;
+  padding: 8px 28px 12px;
   border: 6px solid rgba(17, 221, 51, 0.66);
-  border-radius: 999px;
-  background: rgba(255, 249, 239, 0.92);
+  border-radius: 50% 50% 48% 48% / 68% 68% 34% 34%;
+  background: linear-gradient(180deg, rgba(255, 252, 246, 0.98), rgba(243, 234, 217, 0.94));
   color: var(--brand-dark);
   font-size: 1.66rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 800;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  box-shadow: 0 12px 24px rgba(18, 33, 24, 0.1);
+  white-space: nowrap;
+  box-shadow: 0 16px 30px rgba(18, 33, 24, 0.12);
+}
+
+.hero-status__text {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.02em;
+  transform: translateY(5px);
+}
+
+
+
+.hero-status::before {
+  content: '';
+  position: absolute;
+  inset: 8px 12px 18px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0));
+  pointer-events: none;
 }
 
 .visual-stack::before {
@@ -1237,7 +1263,6 @@ main {
   overflow: visible;
   text-overflow: clip;
 }
-}
 
 .team-grid--expanded {
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1520,8 +1545,12 @@ main {
 
   .hero-status {
     top: 12px;
-    padding: 7px 12px;
+    padding: 12px 12px;
     font-size: 1.66rem;
+  }
+
+  .hero-status__text {
+    transform: translateY(5px);
   }
 
   .bin-left,
@@ -1627,7 +1656,11 @@ main {
   .hero-status {
     top: 10px;
     font-size: 1.66rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-status__text {
+    transform: translateY(7px);
   }
 
   .bin-left,
